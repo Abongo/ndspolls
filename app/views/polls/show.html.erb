@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h1><%= @poll.name %></h1>
+</p>
+
+<%= form_for @vote do |f| %>
+<ul> <% @poll.options.each do |option| %>
+	<p>
+	<%= check_box_tag("option",option.id) %>
+	<%= option.name %>
+	</p>
+
+<% end %></ul>
+<div class="actions"><%= f.submit 'cast Now!!!' %> </div>
+<% end %>
+
+
+
+<%= link_to 'Edit', edit_poll_path(@poll) %> |
+<%= link_to 'Back', polls_path %>

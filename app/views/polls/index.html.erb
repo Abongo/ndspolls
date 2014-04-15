@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+<% @polls.each do |poll| %>
+<h1> <%=link_to poll.name, poll_path(poll.id) %></h1>
+
+
+
+
+  <% end %>
+<%=link_to "Add new poll",new_poll_path %>
